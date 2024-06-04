@@ -1,0 +1,223 @@
+---
+title: "R_Basics"
+author: "- Vedanti Borate"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### Installation and Pre-requistes
+To set up and configure R programming using RStudio, follow these steps:
+
+1. **Install R**: First, you need to install R on your system. You can download it from the Comprehensive R Archive Network (CRAN) at https://cran.r-project.org/. Choose the version that matches your operating system (Windows, MacOS, Linux), download it, and follow the installation instructions.
+
+2. **Install RStudio**: RStudio is an integrated development environment (IDE) for R. It provides a user-friendly interface and tools to help you use R more effectively. You can download RStudio from https://www.rstudio.com/products/rstudio/download/. Again, choose the version that matches your operating system, download it, and follow the installation instructions.
+
+3. **Configure RStudio**: After installing RStudio, you can configure it to suit your needs. Here are some basic configurations you might want to make:
+
+   - **Set your working directory**: This is the directory where RStudio will look for files and save your work. You can set it by going to `Tools -> Global Options -> General -> Default working directory`.
+
+   - **Choose your CRAN mirror**: This is the server from which you'll download packages. You can set it by going to `Tools -> Global Options -> Packages -> CRAN mirror`.
+
+   - **Manage your packages**: R packages are collections of functions and data sets developed by the community. You can install, update, and manage your packages by going to `Tools -> Install Packages`.
+
+4. **Start using RStudio**: Now you're ready to start using RStudio. You can write your R code in the script editor, and then run it by clicking the `Run` button or pressing `Ctrl+Enter` (or `Cmd+Enter` on a Mac). The results will appear in the console.
+
+### Commenting in R
+R doesn’t support Multi-line and Documentation comments. It only supports single-line comments drafted by a ‘#’ symbol.
+Multi-line commenting : select lines > control/command + shift + C
+
+### R Operators 
+#### Arithmetic Operators
+```{r}
+vec1 <- c(0, 2)
+vec2 <- c(2, 3)
+
+cat("Addition =", vec1 + vec2)
+cat("Subtraction =", vec1 - vec2)
+cat("multiplication =", vec1 * vec2)
+cat("division =" ,vec1 /vec2)
+cat("division remainder=" ,vec1 %% vec2)
+cat("power=", vec1 ^ vec2)
+
+
+```
+
+#### Logical Operators
+```{r}
+cat("power=", vec1 & vec2)
+cat("power=", vec1 | vec2)
+cat("power=", !vec1)
+
+#alternatives
+cat("and op=", vec1[1] & vec2[1])
+cat("and and op=", vec1[1] && vec2[1])
+cat("OR", vec1[1] || vec2[1])
+
+```
+#### Assignment Operators
+```{r}
+vec1 <- c(2:5)
+c(2:5) ->> vec2
+vec3 <<- c(2:5)
+vec4 = c(2:5)
+c(2:5) -> vec5
+
+
+cat ("vector 1 :", vec1, "\n")
+cat("vector 2 :", vec2, "\n")
+cat ("vector 3 :", vec3, "\n")
+cat("vector 4 :", vec4, "\n")
+cat("vector 5 :", vec5)
+```
+### Data types
+```{r}
+# Logical
+print(class(TRUE))
+
+# Integer
+print(class(3L))
+
+# Numeric
+print(class(10.5))
+
+# Complex
+print(class(1+2i))
+
+# Character
+print(class("12-04-2020"))
+
+#type verification
+#is.data_type(object)
+print(is.numeric("12-04-2020"))
+
+#type conversion
+#as.data_type(object) 
+print(as.numeric(TRUE))
+
+```
+
+### Variable methods
+```{r}
+#finding datatype of variables
+print(class("Hi"))
+
+#listing variables in workspace
+print(ls())
+
+#remove variables
+#rm(variable)
+
+#global local variable
+global = 5
+display = function(){
+  global=2
+ 
+} 
+display() 
+print(global) #displays outside value
+```
+
+### Reading Input
+```{r}
+#var1 = readline(prompt = "Enter your name : ");
+#d = scan(what = double())
+
+```
+
+### Printing Output
+```{r}
+x <- "GeeksforGeeks"
+#single variable
+x
+#string and variable
+print(x)
+cat("cat method ",x,9)
+paste0("paste method ",x,9)
+
+#displaying message
+message(x, " is best") 
+
+#printing decimals
+x <- 15 / 7
+print(x, digits = 3) 
+
+```
+
+### Control Statments
+#### IF-else
+```{r}
+# if(expression){
+#     statements
+#     ....
+#     ....
+# }
+var='abc'
+if (var == 'abc'){
+  print(var)
+}else {
+  print("not found")
+}
+```
+
+#### for loop
+```{r}
+# for(value in vector){
+#     statements
+#     ....
+#     ....
+# }
+
+for (val in (1:5)){
+  print(val)
+}
+
+
+```
+
+#### while loop
+```{r}
+# while(expression){
+#     statement
+#     ....
+#     ....
+# }
+
+i=1
+while(i<10){
+  print(i^2)
+  i =i+ 1
+}
+```
+
+
+#### repeat loop
+```{r}
+
+# repeat { 
+#    statements
+#    ....
+#    .... 
+#    if(expression) {
+#       break
+#    }
+# }
+x = 1
+
+repeat{ 
+print(x) 
+x = x + 1
+if(x > 5){ 
+	break
+} 
+}
+
+```
+
+
+
+
+
+
+
